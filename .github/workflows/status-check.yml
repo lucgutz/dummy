@@ -1,0 +1,25 @@
+#for actions see in github
+
+name: Status Check
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+jobs:
+
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo source code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build & Test with Maven
+        run: mvn clean test
