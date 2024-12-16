@@ -19,4 +19,9 @@ class DummyApiApplicationTests {
 		assertNotNull(dummyController);
 	}
 
+	@Test
+	void dummyController() {
+		assertNotNull(null);
+	}
+
 }
